@@ -17,20 +17,20 @@ public record EventDto(
     bool IsRegistered);
 
 public record EventCreateRequest(
-    [property: Required, MaxLength(200)] string Title,
-    [property: MaxLength(4000)] string? Description,
-    [property: MaxLength(300)] string? Location,
-    [property: Required] DateTime StartsAt,
-    [property: Required] DateTime EndsAt,
-    [property: Range(1, 100000)] int Capacity);
+    [Required, MaxLength(200)] string Title,
+    [MaxLength(4000)] string? Description,
+    [MaxLength(300)] string? Location,
+    [Required] DateTime StartsAt,
+    [Required] DateTime EndsAt,
+    [Range(1, 100000)] int Capacity);
 
 public record EventUpdateRequest(
-    [property: Required, MaxLength(200)] string Title,
-    [property: MaxLength(4000)] string? Description,
-    [property: MaxLength(300)] string? Location,
-    [property: Required] DateTime StartsAt,
-    [property: Required] DateTime EndsAt,
-    [property: Range(1, 100000)] int Capacity);
+    [Required, MaxLength(200)] string Title,
+    [MaxLength(4000)] string? Description,
+    [MaxLength(300)] string? Location,
+    [Required] DateTime StartsAt,
+    [Required] DateTime EndsAt,
+    [Range(1, 100000)] int Capacity);
 
 public record RegistrationDto(
     int Id,
