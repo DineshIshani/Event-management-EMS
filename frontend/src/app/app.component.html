@@ -1,0 +1,22 @@
+<nav class="topbar">
+  <a class="brand" routerLink="/events">EventHub</a>
+  <ul>
+    <li><a routerLink="/events" routerLinkActive="active">Events</a></li>
+    @if (auth.isLoggedIn()) {
+      <li><a routerLink="/my-registrations" routerLinkActive="active">My registrations</a></li>
+    }
+  </ul>
+  <div class="account">
+    @if (auth.user(); as user) {
+      <span class="muted">{{ user.fullName }} ({{ user.role }})</span>
+      <button type="button" (click)="logout()">Sign out</button>
+    } @else {
+      <a routerLink="/login">Sign in</a>
+      <a class="button" routerLink="/register">Sign up</a>
+    }
+  </div>
+</nav>
+
+<main>
+  <router-outlet />
+</main>
